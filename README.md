@@ -7,7 +7,7 @@ Código para realizar análisis de frecuencia de datos hidrológicos y notas de 
 
 ## Notas respecto al análisis de frecuencia
 
-### Definiciones fundamentales
+### Introducción
 
 #### Estadística de variables hidrológicas
 
