@@ -24,3 +24,12 @@ Es una herramienta de la estadística y de la teoría de probabilidades que perm
 #### Serie de tiempo
 
 Una serie de tiempo es un conjunto finito de observaciones de una variable, registradas secuencialmente y ordenadas de acuerdo con el tiempo. Desde el punto de vista estadístico, estas observaciones pueden interpretarse como una muestra finita de un proceso aleatorio o de una población de valores potencialmente mucho más amplia.
+
+### Tratamiento de Datos Hidrológicos para el Análisis de Frecuencia
+
+Para que una serie de datos pueda ser tratada estadística y probabilísticamente, debe cumplir, idealmente, con las siguientes condiciones:
+
+- Ser una muestra aleatoria y representativa de la población de la cual proviene.
+- Contener valores homogéneos e independientes.
+
+**Una muestra será más representativa de la población a medida que aumente el número de datos disponibles. En general, se estima que se requiere una serie de al menos 30 años de longitud para lograr una representatividad adecuada. Sin embargo, esta referencia puede variar según la variable hidrológica estudiada, la calidad de los datos y el objetivo del análisis.**
