@@ -7,7 +7,7 @@ Código para realizar análisis de frecuencia de datos hidrológicos y notas de 
 
 ## Notas respecto al análisis de frecuencia
 
-### Introducción
+### 1 Introducción
 
 #### Estadística de variables hidrológicas
 
@@ -25,7 +25,7 @@ Es una herramienta de la estadística y de la teoría de probabilidades que perm
 
 Una serie de tiempo es un conjunto finito de observaciones de una variable, registradas secuencialmente y ordenadas de acuerdo con el tiempo. Desde el punto de vista estadístico, estas observaciones pueden interpretarse como una muestra finita de un proceso aleatorio o de una población de valores potencialmente mucho más amplia.
 
-### Tratamiento de Datos Hidrológicos para el Análisis de Frecuencia
+### 2 Tratamiento de Datos Hidrológicos para el Análisis de Frecuencia
 
 Para que una serie de datos pueda ser tratada estadística y probabilísticamente, debe cumplir, idealmente, con las siguientes condiciones:
 
