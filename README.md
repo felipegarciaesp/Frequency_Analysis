@@ -65,8 +65,6 @@ $$
 
 El símbolo $\overset{d}{=}$ indica que ambos vectores tienen la misma distribución conjunta. Aquí, $m$ es el número de observaciones consideradas, no el orden de un momento estadístico. Esto no significa que los valores observados sean iguales, sino que su comportamiento probabilístico no depende de cuándo se observen.
 
-En muchas aplicaciones se utiliza una condición menos exigente, llamada **estacionariedad débil** o **de segundo orden**: la media y la varianza son constantes en el tiempo, y la covarianza entre dos observaciones depende solo de la distancia temporal entre ellas. En el análisis de frecuencia hidrológico clásico suele suponerse, de manera más general, que la distribución de los caudales máximos se mantiene estable durante el período analizado. La estacionariedad no implica independencia: una serie puede conservar estas propiedades y aun así presentar dependencia entre observaciones.
-
 Los cambios en una distribución pueden describirse observando sus momentos estadísticos:
 
 - **Primer momento:** media.
