@@ -63,7 +63,7 @@ $$
 (X_{t_1}, X_{t_2}, \ldots, X_{t_m}) \overset{d}{=} (X_{t_1+k}, X_{t_2+k}, \ldots, X_{t_m+k})
 $$
 
-El símbolo $\overset{d}{=}$ indica que ambos vectores tienen la misma distribución conjunta. Aquí, $m$ es el número de observaciones consideradas, no el orden de un momento estadístico. Esto no significa que los valores observados sean iguales, sino que su comportamiento probabilístico no depende de cuándo se observen.
+El símbolo $\overset{d}{=}$ significa que ambos grupos tienen el mismo patrón probabilístico. En sencillo: si observamos los caudales de tres años seguidos, la forma en que se combinan valores altos y bajos debería tener las mismas probabilidades al observar otros tres años. Esto no significa que los caudales sean idénticos, sino que ese patrón no cambia al desplazar el período en el tiempo. En la fórmula, $m$ solo indica cuántas observaciones se comparan.
 
 Los cambios en una distribución pueden describirse observando sus momentos estadísticos:
 
