@@ -76,4 +76,48 @@ Por ejemplo, si los caudales anuales pasan de fluctuar alrededor de 100 m³/s a 
 
 En algunos contextos se habla de no estacionariedad de distinto orden para referirse a los momentos estadísticos afectados. Sin embargo, expresiones como “estacionariedad de segundo orden” también tienen un significado técnico específico, relacionado con la media y la covarianza. Para evitar ambigüedades, aquí es preferible indicar directamente si cambia la media, la varianza, la asimetría u otra característica estadística.
 
+#### Procesos no estacionarios en la media
+
+Los procesos no estacionarios más comunes que afectan al promedio de la serie son los de **tendencia**, **periodicidad** y **persistencia**.
+
+##### Tendencia
+
+Existe tendencia en una serie cuando el promedio móvil de sus características o parámetros muestra una variación sostenida, ya sea creciente o decreciente, en el tiempo. Por ejemplo, una serie de caudales anuales que exhibe una disminución progresiva asociada a un aumento sostenido de las extracciones de agua en la cuenca, o una serie de temperaturas que muestra un incremento gradual atribuible al cambio climático.
+
+##### Periodicidad
+
+La periodicidad es una característica intrínseca de muchas variables hidrológicas, ya que estas quedan sujetas a los ciclos climatológicos diurnos y anuales, habiéndose sugerido además la existencia de otros ciclos de período mayor. Por ejemplo, los caudales de un río de régimen nival presentan un ciclo anual marcado, con valores altos en los meses de deshielo y valores bajos en invierno; de manera similar, la evaporación diaria sigue un ciclo asociado a la radiación solar a lo largo del día.
+
+##### Persistencia
+
+La persistencia es la tendencia de algunas variables aleatorias a mantenerse sostenidamente en valores similares a los que las han precedido. Por ejemplo, en una serie de niveles de un embalse o de humedad de suelo, un valor alto en un período tiende a ir seguido de valores también altos en los períodos siguientes, reflejando la memoria o inercia del sistema hidrológico.
+
+#### Detección y tratamiento
+
+Se deben aplicar procedimientos y tests estadísticos para detectar la presencia de procesos no estacionarios. Si se detectan, **deben ser eliminados de la serie antes de someterla a análisis de frecuencia**.
+
+> [!NOTE]
+> ### ¿Cómo se maneja la periodicidad en la práctica, si es casi inherente a toda variable hidrológica?
+>
+> La periodicidad responde a ciclos físicos reales (estacionalidad climática, ciclo diario de radiación, etc.), por lo que no se "elimina" dato a dato como una tendencia espuria. En su lugar, se **controla mediante el diseño de la serie** que se somete al análisis de frecuencia:
+>
+> - **Trabajar con un valor por ciclo (lo más común):** extraer, por ejemplo, el **máximo anual** (crecidas), el **mínimo anual** (estiajes/sequías) o el **promedio anual**, según el fenómeno de interés. Al tomar un solo valor representativo por año, el ciclo intra-anual queda fuera de la serie resultante, y esta puede tratarse razonablemente como estacionaria frente al ciclo estacional.
+> - **Trabajar por sub-período homogéneo:** analizar cada mes o estación del año por separado (por ejemplo, los caudales de enero de todos los años), evitando mezclar datos de ciclos distintos en una sola distribución.
+> - **Remover el ciclo explícitamente:** ajustar un modelo del ciclo estacional (medias y desviaciones mensuales) y trabajar con las anomalías o residuos, o usar modelos tipo SARIMA. Esto es más propio del análisis de series de tiempo que del análisis de frecuencia clásico, pero es una alternativa si se requiere usar datos sub-anuales directamente.
+>
+> En resumen, no es necesario eliminar la periodicidad dato a dato: se elige una ventana de agregación (anual, mensual, estacional) que haga que deje de ser un factor dentro de la serie analizada. La elección entre máximo anual, mínimo anual o promedio anual depende del objetivo del estudio (diseño de obras de crecida → máximos; estudios de sequía o caudal ecológico → mínimos o promedios).
+
+> [!NOTE]
+> ### ¿Qué hacer si se detecta tendencia en la serie?
+>
+> Si un test estadístico (por ejemplo, Mann-Kendall, Spearman o una regresión lineal con test de significancia de la pendiente) confirma una tendencia significativa, las alternativas típicas son:
+>
+> 1. **Investigar y corregir la causa, si es antrópica y cuantificable:** por ejemplo, si la tendencia en caudales se debe a extracciones crecientes conocidas, se puede reconstruir una serie "naturalizada" (sumando de vuelta las extracciones a cada año) para obtener una serie más homogénea y estacionaria, representativa del régimen natural de la cuenca.
+> 2. **Remover la tendencia (*detrending*):** ajustar una función de tendencia (lineal, polinómica, etc.) y trabajar con los **residuos** (serie menos tendencia). Esto estabiliza la media, pero complica la interpretación de los resultados, ya que luego hay que reincorporar la tendencia al resultado final (por ejemplo, proyectar el valor de diseño al año de interés sumando la tendencia estimada para ese año).
+> 3. **Segmentar la serie:** si la tendencia refleja un cambio de régimen (por ejemplo, un antes y un después de la construcción de un embalse o un cambio abrupto de uso de suelo), puede ser más apropiado dividir la serie en dos períodos y analizar solo el más reciente y relevante para las condiciones actuales o futuras, en vez de forzar a toda la serie a ser estacionaria.
+> 4. **Usar métodos no estacionarios (enfoque más moderno):** en vez de eliminar la tendencia, modelar directamente permitiendo que los parámetros de la distribución (p. ej. la media) varíen en el tiempo o en función de una covariable (como el año o un índice climático). Esto es lo que se conoce como **análisis de frecuencia no estacionario**, cada vez más usado en contextos de cambio climático, aunque requiere supuestos y metodologías adicionales respecto al AF clásico.
+>
+> En la práctica más tradicional, lo usual es detectar la causa, corregir o naturalizar la serie si es posible, y si no, remover la tendencia (*detrending*) antes del análisis de frecuencia, dejando el enfoque no estacionario como una alternativa más avanzada.
+
+
 
